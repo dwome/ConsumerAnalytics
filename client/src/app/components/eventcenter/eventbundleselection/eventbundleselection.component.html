@@ -1,0 +1,171 @@
+<div class="container containertop" style="margin-top:-50px">
+
+  <section>
+    <div class="wizard">
+      <div class="wizard-inner">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+
+          <!-- Detail -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished active -->
+          <li *ngIf="detail_status && active_status != 'detail'" role="presentation" class="active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!detail_status" role="presentation" class="disabled">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+
+          <!-- First Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!select_status" role="presentation" class="disabled">
+            <a aria-controls="step2" title="testt">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Second Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
+            <a aria-controls="step1" title="Step 3">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="well">
+    <form class="form-horizontal" style="text-align: center">
+
+      <legend>{{ 'chooseBundle' | translate}}</legend>
+
+      <div class="card-columns">
+        <div class="info-card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
+          <div class="front">
+            <h4 class="card-title">{{bundle.title}}
+            <span class="card-block" style="object-fit: contain">
+              <span class="badge progress-bar-info">{{bundle.smartscore}} / 10</span>
+            </span>
+              </h4>
+            <img class="card-img-top img-fluid" src="http://localhost:3000/src/assets/logo_preview.png" alt="Card image cap" style='height: 40%; width: 45%; object-fit: contain ;'>
+            <span *ngFor="let article of bundle.articles">
+            <img class="card-img-top img-fluid" onError="this.src='http://localhost:3000/src/assets/notfound.jpg';" src="http://localhost:3000/src/assets/articles/{{article.ean}}.jpg" alt="Card image cap" style='height: 40%; width: 45%; object-fit: cover;'>
+            </span>
+            <span class="car-block" class="bundledescription">
+              <p class="card-text">{{bundle.description}}</p>
+            </span>
+          </div>
+
+          <div class="back">
+            <div class="card-block">
+              <legend>{{ 'bundleProd1' | translate}}</legend>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{ 'product2' | translate}}</th>
+                    <th>{{ 'EAN1' | translate}}</th>
+                    <th>{{ 'price' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let article of bundle.articles">
+                    <td>{{article.name}}</td>
+                    <td>{{article.ean}}</td>
+                    <td>{{article.preis}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <legend>Product Weighting</legend>
+              <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Weighting</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let article of bundle.articles">
+                  <td>{{article.name}}</td>
+                  <td>{{article.category}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pull-left">
+          <button [routerLink]="[ '/eventdetail']" class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events1' | translate}}
+            </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

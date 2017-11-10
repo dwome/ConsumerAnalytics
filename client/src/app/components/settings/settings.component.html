@@ -1,0 +1,80 @@
+<div class="container containertop" align="center">
+  <div class="jumbotron">
+    <form class="form-horizontal" style="text-align: center">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>{{ 'changeemail' | translate}}</legend>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="email">{{ 'email3' | translate}}</label>
+          <div class="col-xs-4">
+            <input [(ngModel)]="user.email_address" id="email" name="email" type="text" class="form-control input-md">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="phonenumber">{{ 'phone2' | translate}}</label>
+          <div class="col-xs-4">
+            <input [(ngModel)]="user.phonenumber" id="phonenumber" name="phonenumber" type="text" class="form-control input-md">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+
+    <form class="form-horizontal" style="text-align: center">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>{{ 'bestchannel' | translate}}</legend>
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group" [hidden]="!phone_entered">
+          <label class="col-xs-4 control-label">{{ 'whatsapp2' | translate}}</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="whatsapp_toggle" ([ngModel])="whatsapp_toggle" name="whatsapp_toggle"
+                     (click)="switch('whatsapp')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group" [hidden]="!email_entered">
+          <label class="col-xs-4 control-label">{{ 'email4' | translate}}</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="email_toggle" ([ngModel])="email_toggle" name="email_toggle"
+                     (click)="switch('email')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group" [hidden]="!phone_entered">
+          <label class="col-xs-4 control-label">{{ 'sms2' | translate}}</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="sms_toggle" ([ngModel])="sms_toggle" name="sms_toggle"
+                     (click)="switch('sms')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label"> {{ 'alexa' | translate}}</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="true" name="amazon_toggle">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-info" (click)="saveSettings()">
+          {{ 'done' | translate}}
+        </button>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

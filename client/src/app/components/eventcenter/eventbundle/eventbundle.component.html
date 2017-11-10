@@ -1,0 +1,213 @@
+<div class="container containertop" style="margin-top:-50px">
+
+  <section>
+    <div class="wizard">
+      <div class="wizard-inner">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+
+          <!-- Detail -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished active -->
+          <li *ngIf="detail_status && active_status != 'detail'" role="presentation" class="active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!detail_status" role="presentation" class="disabled">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+
+          <!-- First Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!select_status" role="presentation" class="disabled">
+            <a aria-controls="step2" title="testt">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+          </a>
+          </li>
+
+          <!-- Second Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
+            <a aria-controls="step1" title="Step 3">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+          </a>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div>
+
+
+    <div class="well ">
+      <form>
+        <legend style="text-align: center ">{{ 'create1' | translate}} {{ 'bundle1' | translate}}</legend>
+        <div class="form-group col-xs-6">
+          <label for="title ">{{ 'bundleTitle' | translate}}</label>
+          <div>
+            <input [(ngModel)]="bundle.title " id="title " name="title " type="text " class="form-control input-xs ">
+          </div>
+        </div>
+        <div class="form-group col-xs-6">
+          <label for="selectstyle ">{{ 'styleTemplate' | translate}}</label>
+          <div>
+            <select [(ngModel)]="themevalue" name="selectstyle" class="form-control " id="selectstyle " (change)="handleThemeChange($event.target.value)">
+                                   <option [value]=1>{{ 'opt1' | translate}}</option>
+                                   <option [value]=2>{{ 'opt2' | translate}}</option>
+                                   <option [value]=3>{{ 'opt3' | translate}}</option>
+                                 </select>
+          </div>
+        </div>
+        <div class="form-group col-xs-6">
+          <label for="title ">{{ 'bundleDesc' | translate}}</label>
+          <div>
+            <textarea [(ngModel)]="bundle.description " id="description " name="description " type="text " class="form-control input-xs "></textarea>
+          </div>
+        </div>
+      </form>
+      <div class="form-group col-xs-6">
+        <label for="tab ">{{ 'discount' | translate}}</label>
+        <div>
+          <div class="btn-group" id="status" data-toggle="buttons">
+            <label class="btn btn-default btn-on active" (click)="handleBundleTypeChange(1)">
+                      <input type="radio" name="multifeatured_module[module_id][status]">{{ 'pure' | translate}}</label>
+            <label class="btn btn-default btn-off" (click)="handleBundleTypeChange(2)">
+                      <input type="radio" name="multifeatured_module[module_id][status]">{{ 'mixed' | translate}}</label>
+          </div>
+          <div class="btn-group" data-toggle="buttons" *ngIf="type == 1">
+            <label class="btn btn-default" (click)="handleChangePure(0.1)">
+            <input type="radio" name="radiogroup" id="option1"> 10%
+              </label>
+            <label class="btn btn-default" (click)="handleChangePure(0.25)">
+              <input type="radio" name="options" id="option2"> 25%
+            </label>
+            <label class="btn btn-default" (click)="handleChangePure(0.5)">
+              <input type="radio" name="options" id="option3" >  50%
+            </label>
+            <label class="btn btn-default" (click)="handleChangePure(0.75)">
+              <input type="radio" name="options" id="option4" > 75%
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+      <form class="form-horizontal ">
+        <legend style="text-align: center ">{{ 'bundleProd' | translate}}</legend>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>{{ 'prodName' | translate}}</th>
+              <th>{{ 'EAN' | translate}}</th>
+              <th>{{ 'retailPrice' | translate}}</th>
+              <th>{{ 'discountPrice' | translate}}</th>
+              <th *ngIf="type == 2">{{ 'mixedDiscount' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let article of chosen_bundle.articles; let i=index ">
+              <td>{{article.name}}</td>
+              <td>{{article.ean}}</td>
+              <td>{{article.preis}}</td>
+              <td>{{discounts[i]}}</td>
+              <td *ngIf="type == 2">
+                <div class="btn-group" data-toggle="buttons" style="padding-top: 0;">
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.1 )">
+                <input type="radio" name="radiogroup" id="option1"> 10%
+                  </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.25)">
+                  <input type="radio" name="options" id="option2"> 25%
+                </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.5)">
+                  <input type="radio" name="options" id="option3" >  50%
+                </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.75)">
+                  <input type="radio" name="options" id="option4" > 75%
+                </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div class="row " style="text-align: center ">
+          <div class=" col-xs-4 pull-left ">
+            <button class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
+          </div>
+          <div class="col-xs-4 pull-right ">
+            <button class="btn btn-info " (click)="saveEvent() ">{{ 'saveEvent' | translate}}</button>
+          </div>
+
+        </div>
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>

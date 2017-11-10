@@ -1,0 +1,303 @@
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+
+button{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+li {
+  text-align: left !important;
+}
+
+/*.info-card {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: rgba(214, 224, 226, 0.2);
+  -webkit-border-top-left-radius:5px;
+  -moz-border-top-left-radius:5px;
+  border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-top-right-radius:5px;
+  border-top-right-radius:5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block
+}*/
+
+
+legend{
+  font-family: Anaheim;
+}
+
+.well {
+  opacity: 0.93;
+}
+
+.wizard {
+  background: #fff;
+  border-radius:4px;
+}
+
+.wizard .nav-tabs {
+  position: relative;
+  margin: 40px auto;
+  margin-bottom: 0;
+  border-bottom-color: #e0e0e0;
+}
+
+.wizard > div.wizard-inner {
+  position: relative;
+  margin-left: 20%;
+}
+
+.connecting-line {
+  height: 2px;
+  background: #e0e0e0;
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  margin-right: 40%;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+  color: #555555;
+  cursor: default;
+  border: 0;
+  border-bottom-color: transparent;
+}
+
+span.round-tab {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 25px;
+}
+span.round-tab i{
+  color:#555555;
+}
+.wizard li.active span.round-tab {
+  background: gray;
+
+}
+.wizard li.active span.round-tab i{
+}
+
+/*span.round-tab:hover {
+  color: #333;
+  border: 2px solid #333;
+}*/
+
+.wizard .nav-tabs > li {
+  width: 25%;
+}
+
+.wizard li:after {
+  content: " ";
+  position: absolute;
+  left: 46%;
+  opacity: 0;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 5px solid transparent;
+  border-bottom-color: #5bc0de;
+  transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+  content: " ";
+  position: absolute;
+  left: 46%;
+  opacity: 1;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 10px solid transparent;
+  border-bottom-color: gray;
+}
+
+.wizard .nav-tabs > li a {
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 100%;
+  padding: 0;
+}
+/*
+.wizard .nav-tabs > li a:hover {
+  background: transparent;
+}*/
+
+.wizard .tab-pane {
+  position: relative;
+  padding-top: 50px;
+}
+
+.wizard h3 {
+  margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+  .wizard {
+    width: 90%;
+    height: auto !important;
+  }
+
+  span.round-tab {
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard .nav-tabs > li a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+  }
+}
+
+/* CSS used here will be applied after bootstrap.css */
+.info-card{
+  margin: auto;
+}
+
+
+.card-columns {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+
+/*
+Small devices (landscape phones, 34em and up ( 544px ))
+*/
+@media (min-width: 34em) {
+  .card-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+}
+
+/*
+Medium devices (tablets, 48em and up (768px))
+*/
+@media (min-width: 48em) {
+  .card-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+}
+
+/*
+Large devices (desktops, 62em and up(992px) )
+*/
+@media (min-width: 62em) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+}
+
+/*
+Extra large devices (large desktops, 75em and up (1200px))
+*/
+@media (min-width: 75em ) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+/* Card Flip */
+
+.info-card {
+  float: left;
+  margin: 10px;
+  -webkit-perspective: 600px;
+  cursor: pointer;
+}
+
+.front, .back {
+  background: #FFF;
+  border-radius: 10px;
+  transition: -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.front {
+  overflow: auto;
+  width: 350px;
+  height: 420px;
+  position: absolute;
+  z-index: 1;
+}
+
+.back {
+  overflow: auto;
+  padding: 20px;
+  padding-top: 0px;
+  width: 350px;
+  height: 420px;
+  -webkit-transform: rotateY(-180deg);
+}
+.info-card:hover .back {
+  -webkit-transform: rotateY(0);
+}
+
+.info-card:hover .front {
+  -webkit-transform: rotateY(180deg);
+}
+
+.card-title{
+  font-family: Anaheim;
+  font-weight: 800 !important;
+}
+
+.card-text{
+  font-family: "Arial Narrow";
+}
+
+th{
+  text-align: center;
+}
+
+/* Badge */
+
+.badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+/* Table */
+
+
+

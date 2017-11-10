@@ -1,0 +1,270 @@
+<div class="container containertop" style="margin-top:-50px">
+
+  <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog middle">
+      <div class="modal-content round">
+        <div class="modal-header">
+          <button id="closemodal" hidden="true" type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        </div>
+        <div class="modal-body">
+
+          <img style="    position: relative;
+    left: 50%;
+    margin-left: -75px;
+    vertical-align: middle;" src="http://localhost:3000/src/assets/spinning.gif" />
+          <br>
+          <br>
+          <br>
+          <br>
+          <span class="countdown">{{countdown}}</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wizard">
+      <div class="wizard-inner">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+
+          <!-- Detail -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished active -->
+          <li *ngIf="detail_status && active_status != 'detail'" role="presentation" class="active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!detail_status" role="presentation" class="disabled">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+            </a>
+          </li>
+
+
+          <!-- First Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!select_status" role="presentation" class="disabled">
+            <a aria-controls="step2" title="testt">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-th"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Second Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
+            <a aria-controls="step1" title="Step 3">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div>
+
+    <!-- Modal for Animation -->
+    <div id="myModal" class="modal fade in" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <h4 class="modal-title">{{ 'Cancel3' | translate}}</h4>
+          </div>
+          <div class="modal-body">
+            <h4>{{ 'confirmCancel' | translate}}</h4>
+            <p>{{ 'lostProgress' | translate}}</p>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-group">
+
+              <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
+                class="glyphicon glyphicon-check"></span> {{ 'yes' | translate}}
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dalog -->
+    </div>
+    <!-- /.modal -->
+
+
+    <div id="myModal_cancel" class="modal fade in" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <h4 class="modal-title">{{ 'cancel' | translate}}</h4>
+          </div>
+          <div class="modal-body">
+            <h4>{{ 'confirmCancel1' | translate}}</h4>
+            <p>{{ 'lostProgress1' | translate}}</p>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-group">
+
+              <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
+                class="glyphicon glyphicon-check"></span> {{ 'yes1' | translate}}
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dalog -->
+    </div>
+    <!-- /.modal -->
+
+
+    <div class="well ">
+
+
+      <form class="form-horizontal " #cweekForm="ngForm" style="text-align: center ">
+
+        <legend *ngIf="createMode ">{{ 'createEvent1' | translate}}</legend>
+        <legend *ngIf="!createMode ">{{ 'updateEvent1' | translate}}</legend>
+
+        <fieldset>
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'eventTitle1' | translate}}</label>
+            <div class="col-xs-8 ">
+              <input [(ngModel)]="event.title " id="title " name="title " type="text " class="form-control input-xs ">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'calWeek' | translate}}</label>
+            <div class="col-xs-8 ">
+              <input [disabled]="!createMode" [(ngModel)]="event.cweek" id="cweek" name="cweek" type="week"
+                     class="form-control input-xs" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <legend>{{ 'availableProd' | translate}}</legend>
+
+        <fieldset>
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'prodSearch' | translate}}</label>
+            <div class="col-xs-8 ">
+              <input placeholder="Filter by product name" [disabled]="!createMode" [(ngModel)]="articleFilter.name"
+                     name="articleFilter.name" type="text"
+                     class="form-control input-xs">
+            </div>
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-striped table-hover" [mfData]="articles | filterBy : articleFilter"
+                   #mf="mfDataTable"
+                   [mfRowsOnPage]="5">
+              <thead>
+              <tr>
+                <th style="width: 40%">
+                  <mfDefaultSorter by="name">{{ 'prodName1' | translate}}</mfDefaultSorter>
+                </th>
+                <th style="width: 40%">
+                  <mfDefaultSorter by="ean">{{ 'EAN2' | translate}}</mfDefaultSorter>
+                </th>
+                <th style="width: 20%" class="text-right">
+                  <mfDefaultSorter by="preis">{{ 'price2' | translate}}</mfDefaultSorter>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of mf.data" (click)="selectArticle(item, $event)" [class.highlighted]="item === currentArticle">
+                <td class="text-left">{{item.name}}</td>
+                <td class="text-left">{{item.ean}}</td>
+                <td class="text-right">{{item.preis}}</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="4">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="text-left col-xs-6 ">
+            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal_cancel">{{ 'cancel2' | translate}}</button>
+          </div>
+          <div class="col-xs-6 text-right ">
+            <button [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()" [disabled]="!cweekForm.form.valid">{{ 'generateBundles' | translate}}</button>
+            <button [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">{{ 'updateCont' | translate}}</button>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

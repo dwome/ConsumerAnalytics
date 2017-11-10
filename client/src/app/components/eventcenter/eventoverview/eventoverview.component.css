@@ -1,0 +1,160 @@
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+
+button {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+legend{
+  font-family: Anaheim;
+}
+
+.card-info{
+  font-family: 'Anaheim' !important;
+  font-size: 6em;
+  font-weight: 600 !important;
+  color: black !important;
+  background: rgba(255,255,255,0.7);
+}
+
+li {
+  text-align: left !important;
+}
+
+/* Hovercard */
+
+.well {
+  opacity: 0.93;
+}
+
+.card {
+  padding: 30px;
+  background-image: url('src/assets/eventmanagement.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.93;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card.hovercard {
+  position: relative;
+  padding-top: 0;
+  overflow: hidden;
+  text-align: center;
+
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.card.hovercard .card-background {
+  height: 130px;
+}
+
+.card-background img {
+  -webkit-filter: blur(25px);
+
+  -moz-filter: blur(25px);
+  -o-filter: blur(25px);
+  -ms-filter: blur(25px);
+
+  margin-left: -100px;
+  margin-top: -200px;
+  min-width: 130%;
+}
+
+.card.hovercard .useravatar {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+}
+
+.card.hovercard .useravatar img {
+  width: 150px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.card.hovercard .card-info {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+}
+
+.card.hovercard .card-info .card-title {
+  padding: 0 5px;
+  font-size: 20px;
+  line-height: 1;
+  color: #262626;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.card.hovercard .card-info {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  color: #737373;
+  text-overflow: ellipsis;
+}
+
+.card.hovercard .bottom {
+  padding: 0 20px;
+  margin-bottom: 17px;
+}
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
+}
+
+
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;"
+}
+.round{
+  border-radius: 100%; width: 500px; height: 500px;
+}
+.countdown{
+  font-size: 2em;
+  display:table;
+margin:0 auto;
+    margin-top: 20px;
+}

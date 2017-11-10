@@ -1,0 +1,174 @@
+li { cursor: pointer; }
+.footer {
+  /*position:absolute;*/
+  color: white;
+  bottom: 0;
+  width: 100%;
+  font-family: News-Gothic-BT-Bd-reg,'Trebuchet MS',Arial;
+  font-weight: 400;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 5px;
+  border-top: 2px solid #e6eef2;
+}
+
+.body{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 100%;
+  height: auto;
+  min-width: 100%;
+}
+
+/**
+ * navbar
+ * --------------------------------------------------
+ */
+
+.navbar {
+  font-family: News-Gothic-BT-reg,'Trebuchet MS',Arial;
+  font-size: 1em;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.navbar-default {
+  background: rgba(255,255,255,0.95);
+  /*border-color: #06507f;*/
+}
+.navbar-default .navbar-brand {
+  color: #06507f;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: black;
+}
+.navbar-default .navbar-text {
+  color: #06507f;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #06507f;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: black;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #06507f;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #06507f;
+}
+.navbar-default .navbar-toggle {
+  border-color: #06507f;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #06507f;
+}
+
+.navbar-default .navbar-link {
+  color: #06507f;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #06507f;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: black;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #06507f;
+  }
+}
+.navbar-brand {
+  padding-top: 0px;
+}
+
+
+/**
+ * other stuff
+ * --------------------------------------------------
+ */
+
+
+
+.label-block {
+  font-weight: normal;
+  border: 1px solid transparent;
+  padding-top: 15px;
+  text-align: right;
+  width: 100%;
+}
+
+.maincontainer {
+  min-height: 100%;
+  margin-top: 3%;
+}
+
+
+/*Bundle Things*/
+
+.bundlecontainer{
+  width: 100%;
+  height: 100%;
+}
+
+.bundlepart1{
+  background-color: grey;
+  height: 50%px;
+  width: 30%;
+  left: 3%;
+  position: absolute;
+  padding: 10px;
+  margin-left: 3%;
+}
+
+
+.bundlepart3{
+background-color: grey;
+height: 250px;
+width: 30%;
+right: 3%;
+position: absolute;
+padding: 10px;
+margin-right: 3%;
+}
+
+/*Button Styling */
+.button-background {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.button-select {
+  background-color: rgba(0, 43, 106, 0.6)
+}
+.btn-group{
+  padding-top: 14px;
+}
+
+.fontlang{
+  color: #06507f;
+  background: none;
+}
+
+.menupolarity{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.containertop{
+      padding-top: 100px;
+}
